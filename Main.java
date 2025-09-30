@@ -5,7 +5,7 @@ public class Main
   {
     Scanner sc = new Scanner(System.in);
 
-    //prob 1
+
     System.out.println("Input first word: ");
     String word1 = sc.nextLine();
     System.out.println("Input second word: ");
@@ -13,8 +13,12 @@ public class Main
     System.out.println("Input number: ");
     int num = sc.nextInt();
 
+    
     lastFirstN(word1, word2,num);
     stringManip(word1,word2);
+    System.out.println(removeStr("badaboom", "ada"));
+
+    
 
   }
 
@@ -39,9 +43,9 @@ public class Main
   public static void stringManip(String s1, String s2)
   {
     System.out.println(s1.toUpperCase());
+
     String upperLetter = s2.substring(0,1);
     upperLetter = upperLetter.toUpperCase();
-    
     System.out.println(upperLetter + s2.substring(1));
   }
 
@@ -50,7 +54,15 @@ public class Main
   */
   public static String removeStr(String s1, String s2)
   {
-    String output = null;
+    String output;
+    String before;
+    String after;
+    int startOfs2 = s1.indexOf(s2);
+    int endOfs2 = startOfs2 + s2.length();
+    before = s1.substring(0,startOfs2);
+    after = s1.substring(endOfs2);
+    output = before + after;
+    
     return output;
   }
 }
